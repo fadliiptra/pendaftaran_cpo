@@ -87,11 +87,6 @@
             border: 3px solid #22c55e;
             animation: pulse-ring 1.5s ease-out infinite;
         }
-        
-        select option {
-            background: #1e293b;
-            color: #f1f5f9;
-        }
     </style>
 </head>
 
@@ -99,16 +94,12 @@
     <div id="app" class="h-full w-full overflow-auto relative" style="background-color: #0f172a;">
         <div class="gradient-blob" style="width:400px;height:400px;top:-100px;left:-100px;background:#3b82f6;"></div>
         <div class="gradient-blob" style="width:350px;height:350px;bottom:-50px;right:-80px;background:#8b5cf6;"></div>
-        <div class="gradient-blob" style="width:250px;height:250px;top:40%;left:60%;background:#06b6d4;"></div>
 
         <div id="form-view" class="relative z-10 flex items-center justify-center min-h-full px-4 py-10">
             <div class="w-full max-w-lg">
                 <div class="text-center mb-8 animate-float-in">
-
-
-
                     <p class="text-sm font-semibold tracking-widest uppercase mb-1" style="color: #60a5fa;">SMK MAHARDHIKA BATUJAJAR</p>
-                    <h1 class="text-3xl font-800 mb-1" style="color: #f1f5f9;">Pendaftaran OSIS</h1>
+                    <h1 class="text-2xl font-8000 mb-1" style="color: #f1f5f9;">Pendaftaran Calon Pengurus OSIS (CPO)</h1>
                     <p class="text-base" style="color: #94a3b8;">Organisasi Siswa Intra Sekolah</p>
                 </div>
 
@@ -122,7 +113,7 @@
 
                         <div class="animate-float-in-d2">
                             <label for="kelas" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">Kelas</label>
-                            <input type="text" id="kelas" required placeholder="Contoh: X RPL 1" class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
+                            <input type="text" id="kelas" required placeholder="Contoh: X PPLG 3" class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
                         </div>
 
                         <div class="animate-float-in-d3">
@@ -131,32 +122,11 @@
                             <input type="tel" id="no_hp" required placeholder="08xxxxxxxxxx" class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
                         </div>
 
-                        <div class="animate-float-in-d3">
-                            <label for="divisi" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">Divisi
-                                yang Diminati</label>
-                            <select id="divisi" required class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all cursor-pointer" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;">
-                                <option value="" disabled selected>Pilih divisi</option>
-                                <option>Ketua / Wakil Ketua</option>
-                                <option>Sekretaris</option>
-                                <option>Bendahara</option>
-                                <option>Divisi Keagamaan</option>
-                                <option>Divisi Seni & Budaya</option>
-                                <option>Divisi Bisnis & Kemitraan</option>
-                                <option>Divisi Organisasi & Kaderisasi</option>
-                                <option>Divisi Bela Negara</option>
-                                <option>Divisi Kominfo</option>
-                                <option>Divisi Humas</option>
-                                <option>Divisi Personalia</option>
-                            </select>
-                        </div>
-
                         <div class="animate-float-in-d4">
                             <label for="motivasi" class="block text-sm font-600 mb-1.5" style="color: #cbd5e1;">Motivasi
                                 Bergabung</label>
                             <textarea id="motivasi" required rows="3" placeholder="Ceritakan alasanmu..." class="input-field w-full px-4 py-3 rounded-xl text-sm outline-none transition-all resize-none" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); color: #f1f5f9;"></textarea>
                         </div>
-
-                        <div id="form-error" class="hidden text-sm text-center py-2 px-4 rounded-lg" style="background: rgba(239,68,68,0.15); color: #fca5a5;"></div>
 
                         <div class="animate-float-in-d5 pt-1">
                             <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl font-700 text-sm tracking-wide transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: #ffffff; box-shadow: 0 4px 20px rgba(59,130,246,0.3);">
@@ -182,10 +152,10 @@
                     <div class="success-ring" style="width:96px;height:96px;top:0;left:0;"></div>
                     <i data-lucide="check-circle" style="width:48px;height:48px;color:#22c55e;"></i>
                 </div>
-                <h2 class="text-2xl font-800 mb-2" style="color: #f1f5f9;">Selamat! Pendaftaranmu berhasil </h2>
-                <p class="text-sm mb-8" style="color: #94a3b8;">Langkah selanjutnya: bergabung ke grup WhatsApp Calon Pengurus OSIS (CPO)</p>
+                <h2 class="text-2xl font-800 mb-2" style="color: #f1f5f9;">Selamat!! Pendaftaranmu berhasil</h2>
+                <p class="text-sm mb-8" style="color: #94a3b8;">Langkah selanjutnya: bergabung ke grup WhatsApp Calon Pengurus OSIS</p>
                 <div class="card-glass rounded-2xl p-6 mb-6" style="background: rgba(30,41,59,0.7); border: 1px solid rgba(148,163,184,0.1);">
-                    <a href="https://chat.whatsapp.com/example" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-700 text-sm transition-all hover:scale-[1.02]" style="background: #25D366; color: #fff;">
+                    <a href="https://chat.whatsapp.com/EXAMPLE" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-700 text-sm transition-all hover:scale-[1.02]" style="background: #25D366; color: #fff;">
                         <span>Gabung Grup WhatsApp</span>
                         <i data-lucide="external-link" style="width:16px;height:16px;"></i>
                     </a>
@@ -195,17 +165,19 @@
     </div>
 
     <script>
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2mQvMcWVcnCRmxXfNt5K8A5Jjh7oHnwDTw9gxQD4ZFDryR67k9jSoMg7Gml-JiC6rpw/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbztgzfR0GzLTgK9_Fv8g2Ud0WgZMHEIbWcmgzhSbkPIJmMNBgkMZrpiPCuduvyvs8Yi9Q/exec';
 
         const form = document.getElementById('osis-form');
         const formView = document.getElementById('form-view');
         const successView = document.getElementById('success-view');
-        const btn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('submit-text');
-        const spinner = document.getElementById('submit-spinner');
 
-        form.addEventListener('submit', async(e) => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('submit-text');
+            const spinner = document.getElementById('submit-spinner');
+
             btn.disabled = true;
             btnText.textContent = 'Mengirim...';
             spinner.classList.remove('hidden');
@@ -214,38 +186,33 @@
                 nama: document.getElementById('nama').value,
                 kelas: document.getElementById('kelas').value,
                 no_hp: document.getElementById('no_hp').value,
-                divisi: document.getElementById('divisi').value,
                 motivasi: document.getElementById('motivasi').value,
                 registered_at: new Date().toLocaleString('id-ID')
             };
 
-            try {
-                await fetch(SCRIPT_URL, {
+            fetch(SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
+                    body: JSON.stringify(payload),
                     headers: {
                         'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
+                    }
+                })
+                .then(() => {
+                    formView.classList.add('hidden');
+                    successView.classList.remove('hidden');
+                    lucide.createIcons();
+                })
+                .catch(error => {
+                    alert('Gagal mengirim data. Cek koneksi atau hubingi anggota OSIS!');
+                    console.error(error);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btnText.textContent = 'Daftar Sekarang';
+                    spinner.classList.add('hidden');
                 });
-                formView.classList.add('hidden');
-                successView.classList.remove('hidden');
-                lucide.createIcons();
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Terjadi kesalahan saat mengirim data.');
-            } finally {
-                btn.disabled = false;
-                btnText.textContent = 'Daftar Sekarang';
-                spinner.classList.add('hidden');
-            }
         });
-
-        function resetForm() {
-            form.reset();
-            successView.classList.add('hidden');
-            formView.classList.remove('hidden');
-        }
         lucide.createIcons();
     </script>
 </body>
