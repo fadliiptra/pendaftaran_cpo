@@ -7,16 +7,21 @@
     <title>Pendaftaran OSIS</title>
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
     <style>
-        * { font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; }
-        
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            width: 100%; 
-            overflow: hidden; 
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
             position: fixed;
         }
 
@@ -25,40 +30,89 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 110%; 
-            max-width: 700px; 
+            width: 110%;
+            max-width: 700px;
             opacity: 0.18;
             pointer-events: none;
             z-index: 0;
             filter: grayscale(100%) contrast(1.1);
         }
 
-        .gradient-blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.2; pointer-events: none; z-index: 1; }
-        
-        .card-glass { 
-            backdrop-filter: blur(8px); 
-            -webkit-backdrop-filter: blur(8px); 
-            position: relative; 
-            z-index: 10; 
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .card-glass {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 10;
             background: rgba(15, 23, 42, 0.3) !important;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @media (max-height: 800px) {
-            #main-container { transform: scale(0.85); }
+            #main-container {
+                transform: scale(0.85);
+            }
         }
-        
-        @keyframes float-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-float-in { animation: float-in 0.6s ease-out forwards; }
-        .animate-float-in-d1 { animation: float-in 0.6s 0.1s ease-out forwards; opacity: 0; }
-        
-        .input-field:focus { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+
+        @keyframes float-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.2);
+                opacity: 0;
+            }
+        }
+
+        .animate-float-in {
+            animation: float-in 0.6s ease-out forwards;
+        }
+
+        .animate-float-in-d1 {
+            animation: float-in 0.6s 0.1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .success-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid #22c55e;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
     </style>
 </head>
 
 <body class="bg-[#0f172a] flex items-center justify-center">
     <div id="app" class="relative w-full h-full flex items-center justify-center overflow-hidden">
-        
+
         <div class="bg-logo-container">
             <img id="bg-logo-img" src="" alt="" class="w-full h-auto">
         </div>
@@ -67,11 +121,12 @@
         <div class="gradient-blob" style="width:300px;height:300px;bottom:-50px;right:-50px;background:#8b5cf6;"></div>
 
         <div id="main-container" class="relative z-10 w-full max-w-md px-6 flex flex-col items-center">
-            
+
             <div id="form-view" class="w-full">
                 <div class="text-center mb-6 animate-float-in">
                     <img id="top-logo-img" src="" class="w-24 h-24 mx-auto mb-4 object-contain">
-                    <p class="text-[10px] font-bold tracking-widest uppercase mb-1 text-blue-400">SMK MAHARDHIKA BATUJAJAR</p>
+                    <p class="text-[10px] font-bold tracking-widest uppercase mb-1 text-blue-400">SMK MAHARDHIKA
+                        BATUJAJAR</p>
                     <h1 class="text-2xl font-extrabold text-white leading-tight">Pendaftaran OSIS</h1>
                 </div>
 
@@ -79,49 +134,72 @@
                     <form id="osis-form" class="space-y-4">
                         <div>
                             <label class="block text-xs font-semibold mb-1 text-slate-300 ml-1">Nama Lengkap</label>
-                            <input type="text" id="nama" required placeholder="Nama lengkap..." class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none">
+                            <input type="text" id="nama" required placeholder="Nama lengkap..."
+                                class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none">
                         </div>
 
                         <div>
                             <label class="block text-xs font-semibold mb-1 text-slate-300 ml-1">Kelas</label>
-                            <input type="text" id="kelas" required placeholder="Contoh: X RPL 1" class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none">
+                            <input type="text" id="kelas" required placeholder="Contoh: X RPL 1"
+                                class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none">
                         </div>
 
                         <div>
                             <label class="block text-xs font-semibold mb-1 text-slate-300 ml-1">No. WhatsApp</label>
-                            <input type="tel" id="no_hp" required placeholder="08xxxxxxxxxx" class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none">
+                            <input type="tel" id="no_hp" required placeholder="08xxxxxxxxxx"
+                                class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none">
                         </div>
 
                         <div>
                             <label class="block text-xs font-semibold mb-1 text-slate-300 ml-1">Motivasi</label>
-                            <textarea id="motivasi" required rows="2" placeholder="Alasan gabung..." class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none resize-none"></textarea>
+                            <textarea id="motivasi" required rows="2" placeholder="Alasan gabung..."
+                                class="input-field w-full px-4 py-2.5 rounded-xl text-sm bg-slate-900/50 border border-slate-700 text-white outline-none resize-none"></textarea>
                         </div>
 
-                        <button type="submit" id="submit-btn" class="w-full py-3.5 mt-2 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
-                            <span id="submit-text">Kirim Pendaftaran</span>
+                        <button type="submit" id="submit-btn"
+                            class="w-full py-3.5 mt-2 rounded-xl font-bold text-sm bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
+                            <span id="submit-text">Daftar Sekarang</span>
                             <span id="submit-spinner" class="hidden">
-                                <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                                <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4" fill="none"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                                </svg>
                             </span>
                         </button>
                     </form>
                 </div>
             </div>
 
-            <div id="success-view" class="hidden w-full text-center animate-float-in">
-                <div class="bg-green-500/20 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="check" class="text-green-500 w-10 h-10"></i>
+            <div id="success-view" class="hidden relative z-10 flex items-center justify-center min-h-full px-4 py-10">
+                <div class="w-full max-w-lg text-center">
+                    <div class="relative inline-flex items-center justify-center w-24 h-24 rounded-full mb-6"
+                        style="background: rgba(34,197,94,0.15);">
+                        <div class="success-ring" style="width:96px;height:96px;top:0;left:0;"></div>
+                        <i data-lucide="check-circle" style="width:48px;height:48px;color:#22c55e;"></i>
+                    </div>
+                    <h2 class="text-2xl font-800 mb-2" style="color: #f1f5f9;">Selamat!! Pendaftaranmu berhasil</h2>
+                    <p class="text-sm mb-8" style="color: #94a3b8;">Bergabung ke grup WhatsApp Calon Pengurus OSIS (CPO)
+                        untuk mengetahui informasi selanjutnya</p>
+                    <div class="card-glass rounded-2xl p-6 mb-6"
+                        style="background:  rgba(15, 23, 42, 0.3); border: 1px solid rgba(148,163,184,0.1);">
+                        <a href="https://chat.whatsapp.com/EXAMPLE" target="_blank"
+                            class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-700 text-sm transition-all hover:scale-[1.02]"
+                            style="background: #25D366; color: #fff;">
+                            <span>Gabung Grup WhatsApp</span>
+                            <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+                        </a>
+                    </div>
                 </div>
-                <h2 class="text-2xl font-bold text-white mb-2">Berhasil Terkirim!</h2>
-                <p class="text-slate-400 text-sm mb-8">Data kamu sudah kami terima.</p>
-                <a href="https://chat.whatsapp.com/EXAMPLE" class="block w-full py-3.5 rounded-xl font-bold bg-green-600 text-white shadow-lg shadow-green-900/20">Gabung Grup WhatsApp</a>
             </div>
 
         </div>
     </div>
 
     <script>
-        const LOGO_URL = 'logo_osis.png'; 
-        
+        const LOGO_URL = 'logo_osis.png';
+
         document.getElementById('bg-logo-img').src = LOGO_URL;
         document.getElementById('top-logo-img').src = LOGO_URL;
 
@@ -131,14 +209,14 @@
         const formView = document.getElementById('form-view');
         const successView = document.getElementById('success-view');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const btnText = document.getElementById('submit-text');
             const spinner = document.getElementById('submit-spinner');
 
             btn.disabled = true;
-            btnText.textContent = 'Proses...';
+            btnText.textContent = 'Mengirim...';
             spinner.classList.remove('hidden');
 
             const payload = {
@@ -155,19 +233,20 @@
                 body: JSON.stringify(payload),
                 headers: { 'Content-Type': 'application/json' }
             })
-            .then(() => {
-                formView.classList.add('hidden');
-                successView.classList.remove('hidden');
-                lucide.createIcons();
-            })
-            .catch(() => alert('Terjadi kesalahan.'))
-            .finally(() => {
-                btn.disabled = false;
-                btnText.textContent = 'Kirim Pendaftaran';
-                spinner.classList.add('hidden');
-            });
+                .then(() => {
+                    formView.classList.add('hidden');
+                    successView.classList.remove('hidden');
+                    lucide.createIcons();
+                })
+                .catch(() => alert('Terjadi kesalahan.'))
+                .finally(() => {
+                    btn.disabled = false;
+                    btnText.textContent = 'Kirim Pendaftaran';
+                    spinner.classList.add('hidden');
+                });
         });
         lucide.createIcons();
     </script>
 </body>
+
 </html>
